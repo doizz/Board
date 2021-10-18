@@ -40,11 +40,5 @@ public class BoardApiController {
     public Long save(@PathVariable final Long id, @RequestBody final BoardRequestDto params) {
         return boardService.update(id, params);
     }
-    /**
-     * 게시글 삭제
-     */
-    @PatchMapping("/boards/del")
-    public Long del(@PathVariable final Long id, @RequestBody final BoardRequestDto params) {
-        return boardService.update(id, params);
-    }
+
 }
