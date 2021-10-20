@@ -6,6 +6,7 @@ import com.study.board.model.BoardService;
 import com.study.exception.CustomException;
 import com.study.exception.ErrorCode;
 import lombok.RequiredArgsConstructor;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,4 +42,18 @@ public class BoardApiController {
         return boardService.update(id, params);
     }
 
+    @GetMapping(value = "/board/write.do")
+    public String openBoardWrite(@RequestParam(value = "idx", required = false) Long idx, Model model) {
+        if (idx == null) {
+//            model.addAttribute("board", new BoardDTO());
+//        } else {
+//            BoardDTO board = boardService.getBoardDetail(idx);
+//            if (board == null) {
+//                return "redirect:/board/list.do";
+//            }
+//            model.addAttribute("board", board);
+        }
+
+        return "board/write";
+    }
 }
