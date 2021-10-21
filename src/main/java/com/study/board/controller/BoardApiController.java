@@ -1,5 +1,6 @@
 package com.study.board.controller;
 
+import com.study.board.domain.BoardDTO;
 import com.study.board.dto.BoardRequestDto;
 import com.study.board.dto.BoardResponseDto;
 import com.study.board.model.BoardService;
@@ -44,7 +45,7 @@ public class BoardApiController {
 
     @GetMapping(value = "/board/write.do")
     public String openBoardWrite(@RequestParam(value = "idx", required = false) Long idx, Model model) {
-        if (idx == null) {
+//        if (idx == null) {
 //            model.addAttribute("board", new BoardDTO());
 //        } else {
 //            BoardDTO board = boardService.getBoardDetail(idx);
@@ -52,8 +53,8 @@ public class BoardApiController {
 //                return "redirect:/board/list.do";
 //            }
 //            model.addAttribute("board", board);
-        }
+//
 
-        return "board/write";
+        return "/board/write";
     }
 }
